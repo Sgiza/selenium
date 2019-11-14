@@ -19,13 +19,13 @@ public class LoginTests {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://deens.com/login");
-        driver.findElement(By.cssSelector("#email")).click();
+        driver.findElement(By.cssSelector("#email"));
         driver.findElement(By.cssSelector("#email")).sendKeys("macarena1@gmail.com");
-        driver.findElement(By.cssSelector("#password")).click();
+        driver.findElement(By.cssSelector("#password"));
         driver.findElement(By.cssSelector("#password")).sendKeys("Test123Test123");
         driver.findElement(By.cssSelector(".ui.large.fluid.button.green-btn.pl-btn")).click();
         Assert.assertTrue (driver.findElement ( By.cssSelector ("[class*='DesktopDropDownMenu__AvatarWrapper']") ).isDisplayed ());
-        // driver.quit();
+        driver.quit();
     }
 
 
@@ -35,12 +35,12 @@ public class LoginTests {
         WebDriver driver = new ChromeDriver();
         driver.get("https://deens.com/login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebElement login_button = driver.findElement(By.cssSelector("[data-testid=\"loginSubmit\"]"));
-        login_button.click();
+        WebElement loginButton = driver.findElement(By.cssSelector("[data-testid=\"loginSubmit\"]"));
+        loginButton.click();
         WebElement uiErrorMessage = driver.findElement(By.cssSelector(".ui.error.message"));
         String errorMessage = uiErrorMessage.getText();
         Assert.assertEquals(errorMessage, "Cannot login\n" + "Empty email or password");
-        // driver.quit();
+        driver.quit();
 
     }
 
@@ -50,16 +50,16 @@ public class LoginTests {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get ( "https://deens.com/login" );
-        WebElement email_button = driver.findElement ( By.cssSelector ("#email"));
-        email_button.sendKeys ( "ajgirre@gmail.com" );
-        WebElement incorrectpassword_button = driver.findElement ( By.cssSelector ("#password"));
-        incorrectpassword_button.sendKeys ( "jhhfjdkfhd" );
-        WebElement login_button = driver.findElement (By.cssSelector ("[data-testid=\"loginSubmit\"]"));
-        login_button.click ( );
+        WebElement emailButton = driver.findElement ( By.cssSelector ("#email"));
+        emailButton.sendKeys ( "ajgirre@gmail.com" );
+        WebElement incorrectpasswordButton = driver.findElement ( By.cssSelector ("#password"));
+        incorrectpasswordButton.sendKeys ( "jhhfjdkfhd" );
+        WebElement loginButton = driver.findElement (By.cssSelector ("[data-testid=\"loginSubmit\"]"));
+        loginButton.click ( );
         WebElement uiErrorMessage = driver.findElement ( By.cssSelector (".ui.error.message"));
         String errorMessage = uiErrorMessage.getText ();
         Assert.assertEquals ( errorMessage, "Cannot login\n" + "no user found with email: ajgirre@gmail.com" );
-        // driver.quit();
+        driver.quit();
 
 
     }

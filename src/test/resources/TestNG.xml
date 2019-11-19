@@ -8,6 +8,5 @@
             <class name="LoginTests"/>
             <class name="SignUp"/>
         </classes>
-
     </test>
 </suite>

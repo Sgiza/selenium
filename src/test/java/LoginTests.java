@@ -27,14 +27,14 @@ public class LoginTests extends BaseTest {
     @Test
     public void emptyCredentials () {
 
+
         submit ( );
         Assert.assertEquals ( getErrorMessage (), "Cannot login\n" + "Empty email or password" );
-
     }
 
     @Test
-    public void wrongCredentials () {
 
+    public void wrongCredentials () {
 
         enterEmail ( "ajgirre@gmail.com" );
         enterPassword ( "hfdgfdkghkfdl" );
@@ -47,6 +47,7 @@ public class LoginTests extends BaseTest {
     public void enterPassword ( String password ) {
         driver.findElement ( By.cssSelector ( "#password" ) ).sendKeys ( password );
     }
+
 
     public void enterEmail ( String email ) {
         driver.findElement ( By.cssSelector ( "#email" ) ).sendKeys ( email );

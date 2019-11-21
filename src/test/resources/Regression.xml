@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Test Suite: Deens Website">
+    <test name="Regression Test 1: loginSuccessTest" >
+
+    <classes>
+        <class name="LoginTests">
+           <methods>
+               <include name="loginSuccessTest"/>
+
+           </methods>
+
+        </class>
+          </classes>
+
+         </test>
+
+    <test name="Regression Test 2: emptyCredentials" >
+    <classes>
+    <class name="LoginTests">
+        <methods>
+            <include name="emptyCredentials"/>
+
+        </methods>
+
+    </class>
+
+        </classes>
+        </test>
+
+    <test name="Regression Test 3: wrongCredentials" >
+        <classes>
+            <class name="LoginTests">
+                <methods>
+                    <include name="wrongCredentials"/>
+
+                </methods>
+
+            </class>
+
+        </classes>
+    </test>
+    <test name="Regression Test 4: signUpSucessTest" >
+        <classes>
+            <class name="SignUpPage">
+                <methods>
+                    <include name="signUpSucessTest"/>
+
+                </methods>
+
+            </class>
+
+        </classes>
+    </test>
+    <test name="Regression Test 5: signUpWrongCredentials" >
+        <classes>
+            <class name="SignUpPage">
+                <methods>
+                    <include name="signUpWrongCredentials"/>
+
+                </methods>
+
+            </class>
+
+        </classes>
+    </test>
+    <test name="Regression Test 6: " >
+        <classes>
+            <class name="SignUpPage">
+                <methods>
+                    <include name="signUpEmptyCredentials"/>
+
+                </methods>
+
+            </class>
+
+        </classes>
+    </test>
+    </suite>
+
+

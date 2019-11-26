@@ -4,15 +4,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginTests extends BaseTest {
 
     @BeforeMethod
     public void openLoginPage () {
-        driver.get ( "https://deens.com/login" );
-
+        driver.get ( "https://deens-master.now.sh/login" );
     }
 
     @Test
@@ -27,7 +26,6 @@ public class LoginTests extends BaseTest {
     @Test
     public void emptyCredentials () {
 
-
         submit ( );
         Assert.assertEquals ( getErrorMessage (), "Cannot login\n" + "Empty email or password" );
     }
@@ -41,26 +39,26 @@ public class LoginTests extends BaseTest {
         submit ( );
         Assert.assertEquals ( getErrorMessage (), "Cannot login\n" + "no user found with email: ajgirre@gmail.com" );
 
-
     }
 
     public void enterPassword ( String password ) {
-        driver.findElement ( By.cssSelector ( "#password" ) ).sendKeys ( password );
-    }
 
+        findElement ( "#password" ).sendKeys ( password );
+    }
 
     public void enterEmail ( String email ) {
-        driver.findElement ( By.cssSelector ( "#email" ) ).sendKeys ( email );
+
+        findElement ( "#email" ).sendKeys ( email );
     }
 
-
     public void submit () {
-        driver.findElement ( By.cssSelector ( "[data-testid=\"loginSubmit\"]" ) ).click ( );
+
+        findElement ( "[data-testid=\'loginSubmit\']" ).click ();
     }
 
     public boolean avatarAppeared () {
 
-        return driver.findElement ( By.cssSelector ( "[class*='DesktopDropDownMenu__AvatarWrapper']" ) ).isDisplayed ( );
+        return findElement ( "[class*='DesktopDropDownMenu__AvatarWrapper']" ).isDisplayed ();
     }
 
     private String getErrorMessage () {
@@ -71,7 +69,7 @@ public class LoginTests extends BaseTest {
 
      public WebElement findElement (String cssLocator) {
 
-         return driver.findElement ( By.cssSelector (cssLocator ) );
+         return wait.until ( ExpectedConditions.elementToBeClickable ( By.cssSelector ( cssLocator ) ) );
      }
 }
 

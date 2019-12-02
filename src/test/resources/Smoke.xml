@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke Test Suite: Deens Website">
+    <test name="Smoke Test 1: loginSuccessTest" >
+
+    <classes>
+        <class name="LoginTests">
+           <methods>
+               <include name="loginSuccessTest"/>
+
+           </methods>
+
+        </class>
+          </classes>
+
+         </test>
+
+    <test name="Smoke Test 2: signUpSucessTest" >
+    <classes>
+    <class name="SignUpPage">
+        <methods>
+            <include name="signUpSucessTest"/>
+
+        </methods>
+
+    </class>
+
+        </classes>
+        </test>
+
+
+    </suite>
+
+

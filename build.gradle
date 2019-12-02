@@ -21,3 +21,13 @@ test {
         suites "src/test/resources/TestNG.xml"
     }
 }
+task smoke (type: Test) {
+    useTestNG() {
+        suites "src/test/resources/Smoke.xml"
+    }
+}
+task regression (type: Test) {
+    useTestNG() {
+        suites "src/test/resources/Regression.xml"
+    }
+}
